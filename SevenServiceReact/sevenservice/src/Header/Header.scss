@@ -1,0 +1,12 @@
+.container-fluid {
+    display: flex;
+    flex-direction: column;
+    .row.left{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .btn-group{
+            background-color: transparent;
+        }
+    }
+}

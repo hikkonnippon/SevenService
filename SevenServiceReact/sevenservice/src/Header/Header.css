@@ -1,0 +1,12 @@
+.container-fluid {
+  display: flex;
+  flex-direction: column;
+}
+.container-fluid .row.left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container-fluid .row.left .btn-group {
+  background-color: transparent;
+}/*# sourceMappingURL=Header.css.map */
