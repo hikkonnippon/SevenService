@@ -1,0 +1,20 @@
+.header{
+    display: flex;
+    flex-direction: column;
+    a{
+        text-decoration:none;
+        color: inherit;
+    }
+    &-top{
+        background-color: var(--grayss);
+        display: flex;
+        justify-content: space-between;
+    }
+    &-down{
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

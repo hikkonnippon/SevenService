@@ -1,0 +1,22 @@
+.navbar {
+  display: flex;
+  margin-right: -15px;
+  margin-left: -15px;
+  background-color: aqua;
+}
+.navbar-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+.navbar-right ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}/*# sourceMappingURL=Navbar.css.map */

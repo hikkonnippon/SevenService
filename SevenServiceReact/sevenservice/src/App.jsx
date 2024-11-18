@@ -1,10 +1,10 @@
 import './App.css';
-import Header from './Header/Header';
+import { Mainmenu } from './pages/mainmenu';
 
 function App() {
   return (
     <div className="App">
-      <Header />
+      <Mainmenu />
     </div>
   );
 }
