@@ -1,0 +1,42 @@
+-- Tabla para almacenar los clientes
+CREATE TABLE Client (
+    ID_Client INT IDENTITY(1,1) PRIMARY KEY,
+    firstName NVARCHAR(100) NOT NULL,
+	middleName NVARCHAR(100) NOT NULL,
+	lastName NVARCHAR(100) NOT NULL,
+    motherLastName NVARCHAR(100) NOT NULL,
+    address NVARCHAR(255),
+    distrit NVARCHAR(100),
+    phone NVARCHAR(15),
+    email NVARCHAR(100),
+    DNI NVARCHAR(15) UNIQUE
+);
+
+-- Tabla para almacenar las recepciones de los servicios
+CREATE TABLE Recepcion (
+    ID_Recepcion INT IDENTITY(1,1) PRIMARY KEY,
+    ID_Client INT NOT NULL,
+    FechaRecepcion DATE NOT NULL,
+    TipoServicio NVARCHAR(50) NOT NULL, -- Valores: 'Mantenimiento completo', 'Preventivo', 'Correctivo'
+    FOREIGN KEY (ID_Cliente) REFERENCES Client(ID_Client)
+);
+
+-- Tabla para almacenar los detalles de los servicios
+CREATE TABLE Servicio (
+    ID_Servicio INT IDENTITY(1,1) PRIMARY KEY,
+    ID_Recepcion INT NOT NULL,
+    Descripcion NVARCHAR(255) NOT NULL, -- Por ejemplo: "Levantamiento de info bici"
+    Presupuesto DECIMAL(10, 2) NOT NULL,
+    Estado NVARCHAR(50) NOT NULL, -- Valores: 'Aprobado', 'Rechazado', 'Pendient
+    FOREIGN KEY (ID_Recepcion) REFERENCES Recepciones(ID_Recepcion)
+);
+
+-- Tabla para almacenar los pagos
+CREATE TABLE Pagos (
+    ID_Pago INT IDENTITY(1,1) PRIMARY KEY,
+    ID_Servicio INT NOT NULL,
+    TipoPago NVARCHAR(50) NOT NULL, -- Valores: 'Efectivo', 'Tarjeta', 'Transferencia'
+    FechaPago DATE NOT NULL,
+    Monto DECIMAL(10, 2) NOT NULL,
+    FOREIGN KEY (ID_Servicio) REFERENCES Servicios(ID_Servicio)
+);

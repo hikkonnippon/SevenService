@@ -1,0 +1,13 @@
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.services {
+  position: relative;
+  display: inline-block;
+}/*# sourceMappingURL=recepcion.css.map */
